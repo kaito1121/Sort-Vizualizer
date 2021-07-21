@@ -52,6 +52,9 @@ class Visualizer:
             nums[i], nums[index] = nums[index], nums[i]
             pygame.time.delay(20)
             self._update_screen()
+            self.make_colorbar(nums,i)
+            self.make_colorbar(nums,index)
+            pygame.display.update()
     
     def bubblesort(self,nums,last):
         if last == 0:
@@ -61,6 +64,8 @@ class Visualizer:
                 nums[i], nums[i+1] = nums[i+1], nums[i]
                 pygame.time.delay(20)
                 self._update_screen()
+                self.make_colorbar(nums,i)
+                pygame.display.update()
 
         self.bubblesort(nums,last-1)
 
